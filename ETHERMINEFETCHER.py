@@ -19,7 +19,7 @@ async def on_ready():
         embed=discord.Embed(color=0xff6600)
         embed.add_field(name="UNPAID BALANCE FOR MINER '0x7A9B...'", value='__'+str(int(dashboard['unpaid'])/1000000000000000000)+' '+'ETH'+'__', inline=False)
         await client.get_channel(id=941774272404287538).send(embed=embed)
-        time.sleep(300)
+        time.sleep(1800)
 
 
 client.run('OTQxNzU1Nzg2NTcxNDE1NTUy.YgakbA.QlpzDT5rXz5yijmWJO8tMXp6nDs')
