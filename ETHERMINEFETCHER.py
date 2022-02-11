@@ -3,7 +3,6 @@ from typing import Type
 import discord
 from discord.ext import commands
 from ethermine import Ethermine
-import time
 
 description = '''BOT ETH PRICE 1 HOURS TIME'''
 intents = discord.Intents.default()
