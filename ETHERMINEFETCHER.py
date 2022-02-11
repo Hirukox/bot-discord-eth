@@ -1,4 +1,3 @@
-from ctypes import addressof
 from typing import Type
 import discord
 from discord.ext import commands
