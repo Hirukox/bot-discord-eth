@@ -1,4 +1,3 @@
-ctypes
 typing
 discord
 ethermine
