@@ -2,9 +2,10 @@ from typing import Type
 import discord
 from discord.ext import commands
 from ethermine import Ethermine
+import yfinance as yf
 import time
 
-description = '''BOT ETH PRICE 1 HOURS TIME'''
+description = '''SEND EVERY 30min ETH PRICE AND ETHERMINE STATS'''
 intents = discord.Intents.default()
 intents.members = True
 
@@ -19,6 +20,10 @@ async def on_ready():
         embed=discord.Embed(color=0xff6600)
         embed.add_field(name="UNPAID BALANCE FOR MINER '0x7A9B...'", value='__'+str(int(dashboard['unpaid'])/1000000000000000000)+' '+'ETH'+'__', inline=False)
         await client.get_channel(id=941774272404287538).send(embed=embed)
+        data=yf.download(tickers='ETH-USD', period= '1d', interval='1d')
+        embed=discord.Embed()
+        embed.add_field(name="PRIX ETH/USD", value='__'+str(data['Close'])+'__', inline=False)
+        await client.get_channel(id=941651641306849330).send(embed=embed)
         time.sleep(1800)
 
 
