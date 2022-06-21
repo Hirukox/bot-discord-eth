@@ -15,16 +15,16 @@ client = commands.Bot(command_prefix='!', description=description, intents=inten
 async def on_ready():
     while True:
         ethermine = Ethermine()
-        address = "0x7A9B050cd0875DBc5629851a61f339E2B07FC4BE"
+        address = "YOUR ADRESS"
         dashboard = ethermine.miner_current_stats(address)
         embed=discord.Embed(color=0xff6600)
-        embed.add_field(name="UNPAID BALANCE FOR MINER '0x7A9B...'", value='__'+str(int(dashboard['unpaid'])/1000000000000000000)+' '+'ETH'+'__', inline=False)
-        await client.get_channel(id=941774272404287538).send(embed=embed)
+        embed.add_field(name="UNPAID BALANCE FOR MINER 'YOUR ADRESS...'", value='__'+str(int(dashboard['unpaid'])/1000000000000000000)+' '+'ETH'+'__', inline=False)
+        await client.get_channel(id=YOUR CHANNEL ID).send(embed=embed)
         data=yf.download(tickers='ETH-USD', period= '1d', interval='1d')
         embed=discord.Embed()
-        embed.add_field(name="PRIX ETH/USD", value='__'+str(data['Close'])+'__', inline=False)
-        await client.get_channel(id=941651641306849330).send(embed=embed)
+        embed.add_field(name="PRICE ETH/USD", value='__'+str(data['Close'])+'__', inline=False)
+        await client.get_channel(id=YOUR CHANNEL ID).send(embed=embed)
         time.sleep(1800)
 
 
-client.run('OTQxNzU1Nzg2NTcxNDE1NTUy.YgakbA.QlpzDT5rXz5yijmWJO8tMXp6nDs')
+client.run('YOUR BOT TOKEN')
